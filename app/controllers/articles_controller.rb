@@ -17,6 +17,15 @@ end
     end
   end 
   
+  def destroy 
+   @article= Article.find (params[:id])
+   if  @article.destroy
+     flash[:notice]= "article was succesfuly deleted "
+     redirect_to articles_path 
+   else
+     puts "something go wrong while trying to delete #{@article.title}"
+    end
+  end 
   
   def edit 
   @article=Article.find(params[:id])
