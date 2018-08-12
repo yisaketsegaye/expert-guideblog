@@ -1,18 +1,4 @@
-<% if @article.errors.any? %>
-<% size=@article.errors.size %>
-<h2>
-  the folowing <%= pluralize(size, 'error', 'errors' ) %> prevented from saving .
-  </h2>
-
- <% @article.errors.full_messages.each do |m| %>
-<ul>
-  <li><%=m %></li>
-</ul>
-  <% end %>
-  <% end %>
-
-
-
+<%= render 'shared/errors' , obj: @article %>
 <div class='row'>
  <div class='col-md-12'>
     
