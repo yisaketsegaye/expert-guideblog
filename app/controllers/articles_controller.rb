@@ -66,5 +66,6 @@ end
    if currrent_user  != @article.user
      flash[:danger] ="you can only edit or delete your own article"
      redirect_to root_path
+   end
   end 
 end 
