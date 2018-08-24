@@ -18,7 +18,12 @@
 <hr>
 
 <%= simple_format(@article.description) %>
-
+ <% if @article.categories.any? %>
+  <p>
+     Tags : <% render @article.categories %>
+  </p>
+  
+  <% end %>
 <div class="article-actions">
  <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
 
